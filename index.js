@@ -36,9 +36,6 @@ first function getComputerChoice
         choise= "There is a error!";
     }
 
-
-
-
   return choise;
 }
 
@@ -46,44 +43,50 @@ first function getComputerChoice
 
 /* console.log( getComputerChoice() ) */
 
-
+/* the game is here
+============================================================================================================ */
 function game(){
-
+/*
   let personaChoise = prompt("Rock,papper or scissors?");
   console.log(personaChoise);
-
+*/
 
   let getComputerChoice=  GetComputerChoice();
   let numberOfGame =5
   let win=0;
   let loose=0;
+
+  /*for begins */
   for(let i=0; i<numberOfGame; i++){
     
-    let personaChoise = prompt("Rock/papper/scissor?");
-    let compDe        = getComputerChoice();
-    let per  = personaChoise.toUpperCase();
+    let personalChoise = prompt("Rock/papper/scissor?");
+    let compDe        = GetComputerChoice();
+
+    let per  = personalChoise.toUpperCase();
     let comp = compDe.toUpperCase();
 
     if(per=comp){/* if comp and person choose the same option game must have more rounds to finish the game */
       numberOfGame++;
     }else if(per = "ROCK"){
-      if(comp= "PAPER"){
-        console.log("You lost this round. BOOHOO! Computer choosed "+comp);
-        loose++;
-      }else if(comp= "SCISSORS"){
-        console.log("You won this round. Yeeeay! Computer choosed "+comp);
-        win++;
-      }
+        if(comp= "PAPER"){
+          console.log("You lost this round. BOOHOO! Computer choosed "+comp);
+          loose++;
+
+          
+        }else if(comp= "SCISSORS"){
+          console.log("You won this round. Yeeeay! Computer choosed "+comp);
+          win++;
+        }
 
 
     }else if(per = "PAPER"){
-      if(comp= "SCISSORS"){
-      console.log("You lost this round. BOOHOO! Computer choosed "+comp);
-      loose++;
-    }else if(comp= "ROCK"){
-      console.log("You won this round. Yeeeay! Computer choosed "+comp);
-      win++;
-    }
+        if(comp= "SCISSORS"){
+        console.log("You lost this round. BOOHOO! Computer choosed "+comp);
+        loose++;
+      }else if(comp= "ROCK"){
+        console.log("You won this round. Yeeeay! Computer choosed "+comp);
+        win++;
+      }
 
   }else if(per = "SCISSORS"){
       if(comp= "ROCK"){
@@ -102,7 +105,9 @@ function game(){
     console.log("YOU LOST THE GAME. THAT'S OKAY!!");
   }
   }
+  /* for ends */
 }
+
 /*
 console.log("let's begin");
 game();*/
