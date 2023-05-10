@@ -101,17 +101,10 @@ function game(){
   }else if(loose>win){
     console.log("YOU LOST THE GAME. THAT'S OKAY!!");
   }
+  }
 }
 /*
 console.log("let's begin");
 game();*/
 
-
-
-
-
-
-
-
-
-
+game()
