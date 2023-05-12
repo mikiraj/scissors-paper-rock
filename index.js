@@ -1,115 +1,71 @@
+console.log("HI");
 
-console.log("Hello World");
+const myArray=["ROCK", "PAPER", "SCISSOR"];
 
-/*
-! need to learn how to take input
-first function getComputerChoice
+function getComputerChoice(){
+  let choice1 = myArray[Math.floor(Math.random() * 3)];
+  let choice = choice1.toUpperCase();
+  console.log(choice);
+  return choice;
+}
 
-
-*/
-
- 
-
- function GetComputerChoice() 
- {
-
-    /*We will use this random number generator 0-2 to choose between r/p/s */
-  function getRandomInt() 
+function getMyChoice(){
+  let myChoice1=prompt("ROCK,PAPER or SCISSOR");
+  myChoice=myChoice1.toLocaleUpperCase();
+  
+  if(myChoice.startsWith("R")){
+    myChoice="ROCK"
+  }else if(myChoice.startsWith("P")){
+    myChoice="PAPER"
+  }else if(myChoice.startsWith("S")){
+    myChoice="SCISSOR"
+  }else{
+    getMyChoice();    /* THERE IS SOME MISTAKE HERE */
+  }
+  console.log(myChoice)
+  return myChoice;
+}
+  let scoreComputer=0;
+  let scoreMe=0;
+function rockPaperScissor(){
+  
+  let a= getMyChoice()
+  let b= getComputerChoice()
+  if(a == b){
+    return "Tie";
+  }else if(
+    (a == "ROCK" && b == "PAPER") ||
+    (a == "PAPER" && b == "SCISSOR") ||
+    (a == "SCISSOR" && b == "ROCK") 
+  ){
+    scoreComputer++;
+    return "Lost"
+  }else if(
+    (a == "PAPER" && b == "ROCK") ||
+    (a == "SCISSOR" && b == "PAPER") ||
+    (a == "ROCK" && b == "SCISSOR") 
+  )
   {
-    return Math.floor(Math.random() * 3);
+    scoreMe++;
+    return "Won"
   }
 
-
-  /* switch for computers choice*/
-    switch(getRandomInt())
-    {
-      case 0: 
-        choise= "rock";
-        break;
-      case 1: 
-        choise= "paper";
-        break;
-      case 2: 
-      choise= "sciccors"; 
-      break;
-      default:
-        choise= "There is a error!";
-    }
-
-  return choise;
 }
 
+console.log(rockPaperScissor())
+console.log(scoreComputer)
+console.log(scoreMe)
 
 
-/* console.log( getComputerChoice() ) */
 
-/* the game is here
-============================================================================================================ */
 function game(){
-/*
-  let personaChoise = prompt("Rock,papper or scissors?");
-  console.log(personaChoise);
-*/
-
-  let getComputerChoice=  GetComputerChoice();
-  let numberOfGame =5
   let win=0;
-  let loose=0;
+  let lose=0;
 
-  /*for begins */
-  for(let i=0; i<numberOfGame; i++){
-    
-    let personalChoise = prompt("Rock/papper/scissor?");
-    let compDe        = GetComputerChoice();
-
-    let per  = personalChoise.toUpperCase();
-    let comp = compDe.toUpperCase();
-
-    if(per=comp){/* if comp and person choose the same option game must have more rounds to finish the game */
-      numberOfGame++;
-    }else if(per = "ROCK"){
-        if(comp= "PAPER"){
-          console.log("You lost this round. BOOHOO! Computer choosed "+comp);
-          loose++;
-
-          
-        }else if(comp= "SCISSORS"){
-          console.log("You won this round. Yeeeay! Computer choosed "+comp);
-          win++;
-        }
-
-
-    }else if(per = "PAPER"){
-        if(comp= "SCISSORS"){
-        console.log("You lost this round. BOOHOO! Computer choosed "+comp);
-        loose++;
-      }else if(comp= "ROCK"){
-        console.log("You won this round. Yeeeay! Computer choosed "+comp);
-        win++;
-      }
-
-  }else if(per = "SCISSORS"){
-      if(comp= "ROCK"){
-      console.log("You lost this round. BOOHOO! Computer choosed "+comp );
-      loose++;
-    }else if(comp= "PAPER"){
-      console.log("You won this round. Yeeeay! Computer choosed "+comp );
-      win++;
-    }
-
-  }
-
-  if(win>loose){
-    console.log("YOU WON THE GAME. GOOD BOY/GIRL!")
-  }else if(loose>win){
-    console.log("YOU LOST THE GAME. THAT'S OKAY!!");
-  }
-  }
-  /* for ends */
+  for(let i=0; i<6 ; i++){ 
+     
+     
+   } 
 }
 
-/*
-console.log("let's begin");
-game();*/
-
-game()
+game(); 
